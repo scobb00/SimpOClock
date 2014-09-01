@@ -9,8 +9,18 @@
     "resources": {
         "media": [
             {
-                "file": "images/SOClock.png",
+                "file": "fonts/Roboto-Condensed.ttf",
+                "name": "FONT_ROBOTO_CONDENSED_21",
+                "type": "font"
+            },
+            {
+                "file": "images/bean_logo.png",
                 "name": "IMAGE_MENU_ICON",
+                "type": "png"
+            },
+            {
+                "file": "images/SOClock.png",
+                "name": "IMAGE_MENU_ICON_NOT",
                 "type": "png"
             },
             {
