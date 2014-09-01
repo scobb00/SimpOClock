@@ -1,0 +1,19 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "scobb00@gmail.com",
+    "longName": "SimpOClock",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "shortName": "SimpOClock",
+    "uuid": "67ea447b-5a10-44f1-974b-b20a04531458",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
