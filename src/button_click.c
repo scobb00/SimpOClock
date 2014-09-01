@@ -46,14 +46,14 @@ static void window_unload(Window *window)
 
 static void handle_init(void) {
   window = window_create();
+  window_stack_push(window, true /* Animated */);
+  window_set_background_color(window, GColorBlack);
   window_set_click_config_provider(window, click_config_provider);
   window_set_window_handlers(window, (WindowHandlers) 
   {
 	.load = window_load,
     .unload = window_unload,
   });
-  const bool animated = true;
-  window_stack_push(window, animated);
 }
 
 static void handle_deinit(void) 
