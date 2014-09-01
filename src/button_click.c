@@ -1,6 +1,9 @@
 #include <pebble.h>
 #include <pebble_fonts.h>
 
+#include "TimeStuff.h"
+#include "Common.h"
+
 static Window *window;
 //static TextLayer *text_layer;
 TextLayer *text_beer_layer;
@@ -15,16 +18,22 @@ static GFont beer_font;
 static void select_click_handler(ClickRecognizerRef recognizer, void *context) 
 {
   text_layer_set_text(text_beer_layer, "Scotch");
+  text_layer_set_text(text_oclock_layer, "O'Clock");
+  layer_set_frame((Layer*)text_oclock_layer, OCLOCK_RECT);
 }
 
 static void up_click_handler(ClickRecognizerRef recognizer, void *context) 
 {
   text_layer_set_text(text_beer_layer, "Wine");
+  text_layer_set_text(text_oclock_layer, "O'Clock");
+  layer_set_frame((Layer*)text_oclock_layer, OCLOCK_RECT);
 }
  
 static void down_click_handler(ClickRecognizerRef recognizer, void *context) 
 {
   text_layer_set_text(text_beer_layer, "Beer");
+  text_layer_set_text(text_oclock_layer, "O'Clock");
+  layer_set_frame((Layer*)text_oclock_layer, OCLOCK_HIDE_RECT);
 }
 
 void line_layer_update_callback(Layer *layer, GContext* ctx) 
@@ -73,7 +82,8 @@ static void window_load(Window *window)
   // layer_add_child(window_layer, text_layer_get_layer(text_beer_layer));
   
   // OClock layer
-  text_oclock_layer = text_layer_create(GRect(8, 97, 144-8, 168-97));
+  //text_oclock_layer = text_layer_create(GRect(8, 97, 144-8, 168-97));
+  text_oclock_layer = text_layer_create(OCLOCK_RECT);
   text_layer_set_text(text_oclock_layer, "O'Clock");
   text_layer_set_text_color(text_oclock_layer, GColorWhite);
   text_layer_set_background_color(text_oclock_layer, GColorClear);
@@ -113,6 +123,10 @@ static void handle_init(void) {
     .unload = window_unload,
   });
   window_stack_push(window, true /* Animated */);
+	//tick_timer_service_subscribe(SECOND_UNIT, handle_minute_tick);
+  tick_timer_service_subscribe(MINUTE_UNIT, handle_minute_tick);
+  // tick_timer_service_unsubscribe();
+
 }
 
 static void handle_deinit(void) 
