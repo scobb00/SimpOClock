@@ -7,7 +7,13 @@
     "longName": "SimpOClock",
     "projectType": "native",
     "resources": {
-        "media": []
+        "media": [
+            {
+                "file": "fonts/Roboto-Bold.ttf",
+                "name": "FONT_ROBOTO_BOLD_SUBSET_36",
+                "type": "font"
+            }
+        ]
     },
     "shortName": "SimpOClock",
     "uuid": "67ea447b-5a10-44f1-974b-b20a04531458",
