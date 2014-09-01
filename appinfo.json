@@ -4,19 +4,14 @@
         ""
     ],
     "companyName": "scobb00@gmail.com",
-    "longName": "SimpOClock",
+    "longName": "Simp or Scotch O'Clock",
     "projectType": "native",
     "resources": {
         "media": [
             {
-                "file": "fonts/Roboto-Condensed.ttf",
-                "name": "FONT_ROBOTO_CONDENSED_21",
+                "file": "fonts/Roboto-Bold.ttf",
+                "name": "FONT_ROBOTO_BOLD_SUBSET_36",
                 "type": "font"
-            },
-            {
-                "file": "images/bean_logo.png",
-                "name": "IMAGE_MENU_ICON",
-                "type": "png"
             },
             {
                 "file": "images/SOClock.png",
@@ -24,14 +19,19 @@
                 "type": "png"
             },
             {
-                "file": "fonts/Roboto-Bold.ttf",
-                "name": "FONT_ROBOTO_BOLD_SUBSET_36",
+                "file": "images/bean_logo.png",
+                "menuIcon": true,
+                "name": "IMAGE_MENU_ICON",
+                "type": "png"
+            },
+            {
+                "file": "fonts/Roboto-Condensed.ttf",
+                "name": "FONT_ROBOTO_CONDENSED_21",
                 "type": "font"
             }
         ]
     },
     "shortName": "SimpOClock",
-    "longName": "Simp or Scotch O'Clock",
     "uuid": "67ea447b-5a10-44f1-974b-b20a04531458",
     "versionCode": 1,
     "versionLabel": "1.0",
