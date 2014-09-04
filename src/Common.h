@@ -20,3 +20,7 @@
 #define DATE_HIDE_RECT     (GRect(-139, 68, 144-8, 168-68))
   
 #define LINE_RECT          (GRect(   8, 97, 139, 2))
+  
+  
+  
+extern int mode_clock;

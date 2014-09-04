@@ -122,24 +122,38 @@ void update_display_date(struct tm *tick_time) {
 
 void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) 
 {
-  // see if update is ok
-  if (alt_count > 0)
-  {
-    alt_count--;
-       
-    // if done counting down, go back to minutes
-    if (alt_count == 0)
-    {
-      tick_timer_service_unsubscribe();
-      //tick_timer_service_subscribe(SECOND_UNIT, handle_minute_tick);
-      tick_timer_service_subscribe(MINUTE_UNIT, handle_minute_tick);
-    }
-  }
-  else
+  if (mode_clock)
   {
 	  update_display_time(tick_time);
-	  // if(units_changed & DAY_UNIT) {update_display_date(tick_time);}
+    // if(units_changed & DAY_UNIT) {update_display_date(tick_time);}
     update_display_date(tick_time);
   }
 }
 
+/*
+void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) 
+{
+
+  if (mode_clock)
+  {
+    // see if update is ok
+    if (alt_count > 0)
+    {
+      alt_count--;
+       
+      // if done counting down, go back to minutes
+      if (alt_count == 0)
+      {
+        tick_timer_service_unsubscribe();
+        //tick_timer_service_subscribe(SECOND_UNIT, handle_minute_tick);
+        tick_timer_service_subscribe(MINUTE_UNIT, handle_minute_tick);
+      }
+    }
+    else
+    {
+  	  update_display_time(tick_time);
+	    // if(units_changed & DAY_UNIT) {update_display_date(tick_time);}
+      update_display_date(tick_time);
+    }
+}
+*/
