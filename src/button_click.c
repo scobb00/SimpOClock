@@ -148,7 +148,7 @@ static void window_load(Window *window)
   // laps_font = fonts_load_custom_font(resource_get_handle(FONT_LAPS));
 
   // text_layer = text_layer_create((GRect) { .origin = { 0, 72 }, .size = { bounds.size.w, 20 } });
-  text_beer_layer = text_layer_create(SCOTCH_RECT);
+  text_beer_layer = text_layer_create(SCOTCH_HIDE_RECT);
   text_layer_set_text(text_beer_layer, s_scotch);
   //text_layer_set_text_alignment(text_beer_layer, GTextAlignmentCenter);
   text_layer_set_text_color(text_beer_layer, GColorWhite);
@@ -156,21 +156,10 @@ static void window_load(Window *window)
   // text_layer_set_font(text_beer_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_ROBOTO_BOLD_SUBSET_36)));
   text_layer_set_font(text_beer_layer, beer_font);
   layer_add_child(window_layer, text_layer_get_layer(text_beer_layer));
-  
-  // text_beer_layer
-  /*
-  text_beer_layer = text_layer_create(GRect(8, 52, 144-8, 168-52));
-  text_layer_set_text(text_beer_layer, "Beer");
-  text_layer_set_text_alignment(text_beer_layer, GTextAlignmentCenter);
-  text_layer_set_text_color(text_beer_layer, GColorWhite);
-  text_layer_set_background_color(text_beer_layer, GColorClear);
-  text_layer_set_font(text_beer_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_ROBOTO_BOLD_SUBSET_36)));
-  */
-  // layer_add_child(window_layer, text_layer_get_layer(text_beer_layer));
-  
+   
   // OClock layer
   //text_oclock_layer = text_layer_create(GRect(8, 97, 144-8, 168-97));
-  text_oclock_layer = text_layer_create(OCLOCK_RECT);
+  text_oclock_layer = text_layer_create(OCLOCK_HIDE_RECT);
   text_layer_set_text(text_oclock_layer, s_oclock);
   text_layer_set_text_color(text_oclock_layer, GColorWhite);
   text_layer_set_background_color(text_oclock_layer, GColorClear);
@@ -179,21 +168,21 @@ static void window_load(Window *window)
   layer_add_child(window_layer, text_layer_get_layer(text_oclock_layer));
 
   // big time layer
-  text_time_layer = text_layer_create(TIME_HIDE_RECT);
+  text_time_layer = text_layer_create(TIME_RECT);
   text_layer_set_text_color(text_time_layer, GColorWhite);
   text_layer_set_background_color(text_time_layer, GColorClear);
   text_layer_set_font(text_time_layer, big_time_font);
   layer_add_child(window_layer, text_layer_get_layer(text_time_layer));
 
   // day text layer
-	text_day_layer = text_layer_create(DAY_HIDE_RECT);
+	text_day_layer = text_layer_create(DAY_RECT);
   text_layer_set_text_color(text_day_layer, GColorWhite);
   text_layer_set_background_color(text_day_layer, GColorClear);
   text_layer_set_font(text_day_layer, small_font);
   layer_add_child(window_layer, text_layer_get_layer(text_day_layer));
 
   // date text layer
-  text_date_layer = text_layer_create(DATE_HIDE_RECT);
+  text_date_layer = text_layer_create(DATE_RECT);
   text_layer_set_text_color(text_date_layer, GColorWhite);
   text_layer_set_background_color(text_date_layer, GColorClear);
   text_layer_set_font(text_date_layer, small_font);
